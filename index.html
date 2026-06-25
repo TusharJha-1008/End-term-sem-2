@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum of N Numbers</title>
+</head>
+<body>
+  <h1>Sum of Numbers from 1 to N</h1>
+
+  <input type="number" id="nInput" placeholder="Enter N" min="1">
+  <button onclick="calculateSum()">Calculate Sum</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateSum() {
+      const n =               parseInt(document.getElementById('nInput').value);
+
+      if (isNaN(n) || n < 1) {
+        document.getElementById('result').textContent = 'Please enter a valid positive number.';
+        return;
+      }
+
+      let sum = 0;
+      for (let i = 1; i <= n; i++) {
+        sum += i;
+      }
+
+      document.getElementById('result').textContent = `The sum of numbers from 1 to ${n} is: ${sum}`;
+    }
+  </script>
+</body>
+</html>
